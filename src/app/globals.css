@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Tokens from markdown/Font-Styles.md (home/styles.css is the reference) */
+@theme inline {
+  --color-ink: #111111;
+  --color-gray-nav: #8f8f8f;
+  --color-gray-body: #4b4b4b;
+  --color-gray-line: rgba(17, 17, 17, 0.13);
+  --color-red: #bf3529;
+  --color-logo: #484848;
+  --color-search: #5e5e5e;
+  --color-faint: #b9b9b9;
+  --color-footer: #b5b5b5;
+  --color-border: #e3e3e3;
+
+  --font-sans: var(--font-open-sans), "Helvetica Neue", Arial, sans-serif;
+  --font-jakarta: var(--font-plus-jakarta), var(--font-open-sans), sans-serif;
+  --font-outfit: var(--font-outfit-display), var(--font-open-sans), sans-serif;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+/* ---------- Home hero ---------- */
+
+.hero-section {
+  /* image width is capped by viewport height so hero + content
+     always fit without a scrollbar (880/575 aspect → w = h × 1.5304) */
+  --grid-margin: 6.94%;
+  --media-top: min(3vw, 4vh);
+  --media-w: min(55vw, calc((100vh - 245px) * 1.5304));
+}
+
+.grid-line {
+  background: linear-gradient(
+    to top,
+    var(--color-gray-line) 0%,
+    var(--color-gray-line) 55%,
+    transparent 96%
+  );
+}
+
+/* Figma: Outfit Bold 200px @ 1440 (≈ 0.227 × image width), 15% tracking.
+   --char-scale can be set per slide so longer words render smaller. The
+   letter-spacing is a pre-JS fallback; HeroCarousel zeroes it and spaces
+   the SplitText masks with margins so centering stays exact. */
+.hero-title {
+  --title-basis: var(--media-w);
+  --char-scale: 0.227;
+  font-size: calc(var(--title-basis) * var(--char-scale));
+  letter-spacing: 0.15em;
+}
+
+.carousel-indicator {
+  top: calc(var(--media-top) + var(--media-w) * 0.28);
+}
+
+@media (max-width: 900px) {
+  .hero-title {
+    --title-basis: 77vw;
+  }
+}
