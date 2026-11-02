@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { openGraph } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -37,11 +38,15 @@ const outfit = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Windmill — Bespoke handcrafted furniture",
-    template: "Windmill — %s",
+    default: "Windmill Furniture — Handcrafted solid-wood furniture, New Delhi",
+    template: "%s — Windmill Furniture",
   },
   description: site.description,
-  openGraph: { siteName: site.legalName, type: "website", locale: "en_IN", images: ["/images/hero-1.jpg"] },
+  applicationName: site.legalName,
+  creator: site.legalName,
+  publisher: site.legalName,
+  openGraph: openGraph(),
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = { themeColor: "#ffffff" };

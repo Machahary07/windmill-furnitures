@@ -6,6 +6,7 @@ import Photo from "@/components/ui/Photo";
 import { body, displayHeading, shell } from "@/components/ui/styles";
 import { categories, getCategory, isSortId } from "@/lib/products";
 import { routes } from "@/lib/routes";
+import { openGraph, shareImage } from "@/lib/seo";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ handle: c.handle }));
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/collections/[hand
     title: category.title,
     description: category.blurb,
     alternates: { canonical: routes.collection(category.handle) },
-    openGraph: { images: [category.image] },
+    openGraph: openGraph(shareImage("collections", category.handle, `${category.title} by Windmill`)),
   };
 }
 

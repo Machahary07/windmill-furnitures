@@ -6,6 +6,7 @@ Storefront for Windmill Furniture — Next.js 16 (App Router, Turbopack), Tailwi
 npm run dev      # http://localhost:3000
 npm run build    # production build (type-checks every <Link href> via typedRoutes)
 npm run media    # regenerate src/lib/media-manifest.json after adding images to public/images
+npm run og       # regenerate link-preview images in public/og after changing catalog photos
 ```
 
 ## Images
@@ -18,6 +19,22 @@ and run `npm run media`.
 
 Fonts are self-hosted variable WOFF2 files in `src/app/fonts` (OFL), loaded with `next/font/local`.
 
+## Link previews (Open Graph)
+
+`public/og/windmill.jpg` is the site-wide 1200×630 banner. Products, projects and collections get their
+own preview from `npm run og` (`scripts/og-images.mjs`) — portrait pieces sit in the banner layout
+(`scripts/og-frame.png`), wide photos fill the frame. All stay well under WhatsApp's ~300 KB preview
+limit. Pages build their `openGraph` with `openGraph()` from `src/lib/seo.ts`: Next replaces a parent's
+`openGraph` wholesale, and fills `og:title`/`og:description` from each page's own title and description.
+
+## Admin (UI preview)
+
+`/admin` is the studio panel — dashboard, orders, customers, products, categories, woods & fabrics,
+enquiries, newsletter, projects, team, settings and staff. **It is UI only for now:** screens show sample
+data (`src/lib/admin/data.ts`), Save confirms but stores nothing, and sign-in is one shared preview
+password, `1234` (`src/lib/admin/session.ts`, checked in `src/proxy.ts` and the panel layout). Replace
+both with Payload CMS (admin users + collections) before real use — search `TODO(backend)`.
+
 ## Structure
 
 | Path | What lives there |
@@ -27,6 +44,7 @@ Fonts are self-hosted variable WOFF2 files in `src/app/fonts` (OFL), loaded with
 | `src/app/(checkout)` | `/checkout` → `/checkout/payment` → `/checkout/success/[id]` (or `/checkout/failed`) |
 | `src/app/(print)` | Printable GST invoice |
 | `src/app/p/[code]` | Short product links: `/p/WM-SE-01` → `/products/library-easy-chair` |
+| `src/app/admin` | Studio admin (UI preview): `/admin/login`, `(panel)` screens; components in `src/components/admin` |
 | `src/lib/routes.ts` | **Every URL on the site.** Build links with `routes.*`, never by hand |
 | `src/lib/products.ts` | Catalog data and queries (pages only use the query functions) |
 | `src/lib/projects.ts`, `team.ts`, `site.ts` | Projects, team, contact details and delivery/GST settings |

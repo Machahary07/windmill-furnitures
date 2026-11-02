@@ -6,7 +6,7 @@ import { shell } from "@/components/ui/styles";
 import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = {
-  title: { default: "My Account", template: "Windmill — %s" },
+  title: { default: "My Account", template: "%s — Windmill Furniture" },
   robots: { index: false },
 };
 

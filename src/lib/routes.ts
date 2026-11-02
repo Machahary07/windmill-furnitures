@@ -62,6 +62,28 @@ export const routes = {
   privacy: "/privacy",
 } as const satisfies Record<string, Route | ((...args: never[]) => Route)>;
 
+/* Studio admin. UI preview for now (sample data, password gate in proxy.ts);
+   TODO(backend): Payload CMS collections behind these screens. */
+export const adminRoutes = {
+  home: "/admin",
+  login: (next?: string) => withQuery("/admin/login", { next }),
+  orders: (query?: { status?: string; q?: string }) => withQuery("/admin/orders", query),
+  order: (id: string) => `/admin/orders/${id}` as Route,
+  customers: (query?: { q?: string }) => withQuery("/admin/customers", query),
+  products: (query?: { category?: string; q?: string }) => withQuery("/admin/products", query),
+  newProduct: "/admin/products/new",
+  product: (slug: string) => `/admin/products/${slug}` as Route,
+  categories: "/admin/categories",
+  materials: "/admin/materials",
+  enquiries: (query?: { status?: string; id?: string }) => withQuery("/admin/enquiries", query),
+  newsletter: "/admin/newsletter",
+  projects: "/admin/projects",
+  project: (slug: string) => `/admin/projects/${slug}` as Route,
+  team: "/admin/team",
+  settings: "/admin/settings",
+  staff: "/admin/staff",
+} as const satisfies Record<string, Route | ((...args: never[]) => Route)>;
+
 /** only allow same-site relative redirects (e.g. ?next= after login) */
 export function safeNext(next: string | string[] | undefined, fallback: Route = routes.account): Route {
   return typeof next === "string" && next.startsWith("/") && !next.startsWith("//") ? (next as Route) : fallback;

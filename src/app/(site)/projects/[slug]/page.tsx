@@ -8,6 +8,7 @@ import { body, displayHeading, eyebrow, redLink, sectionHeading, shell } from "@
 import { getProduct, type Product } from "@/lib/products";
 import { getProject, projects } from "@/lib/projects";
 import { routes } from "@/lib/routes";
+import { openGraph, shareImage } from "@/lib/seo";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -16,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/projects/[slug]">): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) return {};
-  return { title: project.title, description: project.summary, openGraph: { images: [project.images[0]] } };
+  return { title: project.title, description: project.summary, openGraph: openGraph(shareImage("projects", project.slug, project.title)) };
 }
 
 export default async function ProjectPage({ params }: PageProps<"/projects/[slug]">) {

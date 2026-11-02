@@ -10,6 +10,7 @@ import { eyebrow } from "@/components/ui/styles";
 import { formatPrice } from "@/lib/money";
 import { getCategory, getProduct, products, relatedProducts } from "@/lib/products";
 import { routes } from "@/lib/routes";
+import { openGraph, shareImage } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: PageProps<"/products/[slug]">
     description: product.description,
     /* configuration links (?wood=…) all point search engines at the one product URL */
     alternates: { canonical: routes.product(product.slug) },
-    openGraph: { images: [product.images[0]] },
+    openGraph: openGraph(shareImage("products", product.slug, `${product.name} — handmade by Windmill`)),
   };
 }
 

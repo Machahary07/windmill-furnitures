@@ -5,7 +5,8 @@ export const site = {
   name: "Windmill",
   legalName: "Windmill Furniture",
   founded: 1991,
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://windmillfurnitures.com",
+  /* `||` not `??`: a blank env var must fall back too, or new URL("") crashes every page */
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://windmillfurnitures.com",
   description: "Windmill Furnitures — bespoke, handcrafted solid-wood furniture from our workshop in Aya Nagar, New Delhi, since 1991.",
   email: "studio@windmillfurnitures.com",
   address: ["Windmill Furniture Workshop", "Aya Nagar", "New Delhi 110047", "India"],
