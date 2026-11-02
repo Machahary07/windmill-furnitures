@@ -8,9 +8,9 @@ import { banner } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Windmill Furniture — Handcrafted solid-wood furniture, New Delhi" },
-  description:
-    "Bespoke and made-to-order solid-wood furniture — chairs, sofas, tables, storage and beds — handcrafted at our workshop in Aya Nagar, New Delhi, since 1991.",
+  title: { absolute: "Windmill Furniture — Handcrafted solid-wood furniture" },
+  /* ≤ ~125 characters so link previews show it whole */
+  description: "Bespoke solid-wood furniture, handcrafted at our New Delhi workshop since 1991 — chairs, sofas, tables, storage and beds.",
   alternates: { canonical: "/" },
 };
 

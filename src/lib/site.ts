@@ -5,8 +5,13 @@ export const site = {
   name: "Windmill",
   legalName: "Windmill Furniture",
   founded: 1991,
-  /* `||` not `??`: a blank env var must fall back too, or new URL("") crashes every page */
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://windmillfurnitures.com",
+  /* Absolute base for link previews, canonical URLs and the sitemap (server-side only).
+     NEXT_PUBLIC_SITE_URL wins; otherwise Vercel's production domain — wmfurn.vercel.app
+     today, the custom domain automatically once one is attached. `||` not `??`, so a
+     blank env var falls back too (new URL("") would crash every page). */
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://windmillfurnitures.com"),
   description: "Windmill Furnitures — bespoke, handcrafted solid-wood furniture from our workshop in Aya Nagar, New Delhi, since 1991.",
   email: "studio@windmillfurnitures.com",
   address: ["Windmill Furniture Workshop", "Aya Nagar", "New Delhi 110047", "India"],

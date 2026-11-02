@@ -38,7 +38,7 @@ const outfit = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Windmill Furniture — Handcrafted solid-wood furniture, New Delhi",
+    default: "Windmill Furniture — Handcrafted solid-wood furniture",
     template: "%s — Windmill Furniture",
   },
   description: site.description,
