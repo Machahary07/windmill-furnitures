@@ -7,7 +7,7 @@ import { routes } from "@/lib/routes";
 
 export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
-    <div className="flex min-h-screen flex-col items-center">
+    <div className="flex min-h-dvh flex-col items-center">
       <Logo className="pt-9" />
       <main className="my-auto px-6 text-center">
         <h1 className="indent-[0.15em] font-outfit text-[clamp(48px,11vw,150px)] leading-none font-bold tracking-[0.15em] text-black">OOPS</h1>

@@ -8,12 +8,12 @@ import loginArt from "../../../public/images/login-art.jpg";
 /* Split layout from the original login screen: form panel + artwork panel */
 export default function AuthShell({ title, subtitle, children }: { title: string; subtitle: string; children: ReactNode }) {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-dvh">
       {/* Left: form panel */}
-      <section className="flex w-[50.6%] flex-col items-center px-12 pt-9 pb-7 max-[860px]:w-full max-[860px]:px-6 max-[860px]:pt-7 max-[860px]:pb-6">
+      <section className="flex w-[50.6%] flex-col items-center px-12 pt-9 pb-7 max-[860px]:w-full max-[860px]:px-6 max-[860px]:pt-7 max-[860px]:pb-6 [@media(max-height:760px)]:pt-5 [@media(max-height:760px)]:pb-4">
         <Logo />
 
-        <main className="my-auto w-full max-w-[544px] py-10 text-center">
+        <main className="my-auto w-full max-w-[544px] py-10 text-center [@media(min-height:761px)_and_(max-height:940px)]:py-5 [@media(max-height:760px)]:py-3">
           <h1 className="font-jakarta text-[54px] font-bold tracking-[-0.01em] text-ink max-[860px]:text-[38px]">{title}</h1>
           <p className="mt-3.5 font-jakarta text-lg font-medium text-gray-nav">{subtitle}</p>
           {children}

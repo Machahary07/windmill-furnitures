@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard";
 import SortSelect from "./SortSelect";
 
 const tabClass =
-  "relative pb-3 font-jakarta text-[15px] font-medium text-gray-nav transition-colors hover:text-ink aria-[current=page]:font-semibold aria-[current=page]:text-ink aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-0 aria-[current=page]:after:-bottom-px aria-[current=page]:after:h-0.5 aria-[current=page]:after:bg-red";
+  "relative pb-3 font-jakarta text-[15px] font-medium text-gray-nav transition-colors hover:text-ink aria-[current=page]:font-semibold aria-[current=page]:text-ink aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-0 aria-[current=page]:after:bottom-0 aria-[current=page]:after:h-0.5 aria-[current=page]:after:bg-red";
 
 const chipClass =
   "rounded-full border px-4 py-1.5 font-jakarta text-[13px] font-medium transition-colors aria-[current=page]:border-ink aria-[current=page]:bg-ink aria-[current=page]:text-white border-border text-gray-body hover:border-ink";
@@ -22,7 +22,7 @@ export default function Catalog({ category, type, sort }: { category?: Category;
 
   return (
     <section className={`${shell} pb-[90px]`}>
-      <nav aria-label="Categories" className="flex gap-9 overflow-x-auto border-b border-[#ececec] [scrollbar-width:none] max-md:gap-6 max-[380px]:gap-4">
+      <nav aria-label="Categories" className="flex gap-9 overflow-x-auto no-scrollbar shadow-[inset_0_-1px_0_#ececec] max-md:gap-6 max-[380px]:gap-4">
         <Link href={routes.shop()} aria-current={!category ? "page" : undefined} className={tabClass}>
           All
         </Link>

@@ -22,7 +22,7 @@ export default function ProductGallery({ images, name, drawing }: { images: stri
         />
       </div>
       {images.length > 1 && (
-        <ul className="mt-3 flex gap-3 overflow-x-auto px-[3.96%] [scrollbar-width:none] max-lg:px-5" aria-label="Product views">
+        <ul className="mt-3 flex gap-3 overflow-x-auto px-[3.96%] no-scrollbar max-lg:px-5" aria-label="Product views">
           {images.map((src, i) => (
             <li key={src} className="shrink-0">
               <button

@@ -48,7 +48,7 @@ export default function FurnitureSection() {
 
       {/* Process: first step is dark (and its photo in colour) by default; hovering
           or focusing any step moves the highlight. Phones get a swipeable row. */}
-      <ol className="group/steps mt-[63px] grid grid-cols-4 max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:[scrollbar-width:none]">
+      <ol className="group/steps mt-[63px] grid grid-cols-4 max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:no-scrollbar">
         {steps.map((step, i) => (
           <li
             key={step.title}

@@ -61,7 +61,7 @@ export default function CatalogCarousel() {
 
       <ul
         ref={track}
-        className="mt-[60px] flex snap-x snap-mandatory gap-[25px] overflow-x-auto scroll-smooth px-[3.4%] scroll-px-[3.4%] max-md:scroll-px-5 [scrollbar-width:none] max-md:px-5 [&::-webkit-scrollbar]:hidden"
+        className="mt-[60px] flex snap-x snap-mandatory gap-[25px] overflow-x-auto scroll-smooth px-[3.4%] scroll-px-[3.4%] max-md:scroll-px-5 no-scrollbar max-md:px-5"
       >
         {catalog.map((p) => (
           <li key={p.slug} data-reveal className="w-[268px] shrink-0 snap-start">

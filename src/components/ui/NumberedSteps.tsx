@@ -4,7 +4,7 @@
    columns — never a sideways scroll on a large screen. */
 export default function NumberedSteps({ steps }: { steps: { title: string; text: string }[] }) {
   return (
-    <ol className="flex snap-x snap-mandatory overflow-x-auto border-y border-ink [scrollbar-width:none] md:grid md:grid-cols-2 md:overflow-visible md:border-b-0 lg:auto-cols-fr lg:grid-flow-col lg:grid-cols-none">
+    <ol className="flex snap-x snap-mandatory overflow-x-auto border-y border-ink no-scrollbar md:grid md:grid-cols-2 md:overflow-visible md:border-b-0 lg:auto-cols-fr lg:grid-flow-col lg:grid-cols-none">
       {steps.map((step, i) => (
         <li
           key={step.title}

@@ -19,18 +19,24 @@
   --font-outfit: var(--font-outfit-display), var(--font-open-sans), sans-serif;
 }
 
-html,
-body {
-  background: #ffffff;
-  color: var(--color-ink);
-}
+/* Everything below sits in a cascade layer: unlayered CSS beats every
+   Tailwind utility regardless of specificity, so a class on an element could
+   silently lose to a rule here. (The reveal fallback is the one deliberate
+   exception — it must win until GSAP takes over.) */
+@layer base {
+  html,
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+  }
 
-/* sticky 58px navbar: keep #anchors and focused fields clear of it.
-   scrollbar-gutter reserves the scrollbar's space so locking scroll (cart
-   drawer, mobile menu) never makes the page jump sideways. */
-html {
-  scroll-padding-top: 72px;
-  scrollbar-gutter: stable;
+  /* sticky 58px navbar: keep #anchors and focused fields clear of it.
+     scrollbar-gutter reserves the scrollbar's space so locking scroll (cart
+     drawer, mobile menu) never makes the page jump sideways. */
+  html {
+    scroll-padding-top: 72px;
+    scrollbar-gutter: stable;
+  }
 }
 
 @keyframes fade {
@@ -59,33 +65,45 @@ html {
 
 /* ---------- Thin scrollbar, site-wide ---------- */
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #c9c9c9 transparent;
+/* in @layer base so no-scrollbar (a utility) can override it */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #c9c9c9 transparent;
+  }
+
+  /* Safari / older Chromium */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: #c9c9c9 padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8f8f8f;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 }
 
-/* Safari / older Chromium */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
+/* Swipe rows (carousel, tabs, thumbnails): still scrollable, no bar */
+@utility no-scrollbar {
+  scrollbar-width: none;
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  border: 2px solid transparent;
-  border-radius: 8px;
-  background: #c9c9c9 padding-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #8f8f8f;
-}
-
-::-webkit-scrollbar-corner {
-  background: transparent;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media print {
@@ -96,41 +114,43 @@ html {
 
 /* ---------- Home hero ---------- */
 
-.hero-section {
-  /* image width is capped by viewport height so hero + content
-     always fit without a scrollbar (880/575 aspect → w = h × 1.5304) */
-  --grid-margin: 6.94%;
-  --media-top: min(3vw, 4vh);
-  --media-w: min(55vw, calc((100vh - 245px) * 1.5304));
-}
+@layer components {
+  .hero-section {
+    /* image width is capped by viewport height so hero + content
+       always fit without a scrollbar (880/575 aspect → w = h × 1.5304) */
+    --grid-margin: 6.94%;
+    --media-top: min(3vw, 4vh);
+    --media-w: min(55vw, calc((100svh - 245px) * 1.5304));
+  }
 
-.grid-line {
-  background: linear-gradient(
-    to top,
-    var(--color-gray-line) 0%,
-    var(--color-gray-line) 55%,
-    transparent 96%
-  );
-}
+  .grid-line {
+    background: linear-gradient(
+      to top,
+      var(--color-gray-line) 0%,
+      var(--color-gray-line) 55%,
+      transparent 96%
+    );
+  }
 
-/* Figma: Outfit Bold 200px @ 1440 (≈ 0.227 × image width), 15% tracking.
-   --char-scale can be set per slide so longer words render smaller. The
-   letter-spacing is a pre-JS fallback; HeroCarousel zeroes it and spaces
-   the SplitText masks with margins so centering stays exact. */
-.hero-title {
-  --title-basis: var(--media-w);
-  --char-scale: 0.227;
-  font-size: calc(var(--title-basis) * var(--char-scale));
-  letter-spacing: 0.15em;
-}
-
-.carousel-indicator {
-  top: calc(var(--media-top) + var(--media-w) * 0.28);
-}
-
-/* phones/tablets: 12.5vw keeps the longest word (WINDMILL) inside the screen */
-@media (max-width: 900px) {
+  /* Figma: Outfit Bold 200px @ 1440 (≈ 0.227 × image width), 15% tracking.
+     --char-scale can be set per slide so longer words render smaller. The
+     letter-spacing is a pre-JS fallback; HeroCarousel zeroes it and spaces
+     the SplitText masks with margins so centering stays exact. */
   .hero-title {
-    --title-basis: 55vw;
+    --title-basis: var(--media-w);
+    --char-scale: 0.227;
+    font-size: calc(var(--title-basis) * var(--char-scale));
+    letter-spacing: 0.15em;
+  }
+
+  .carousel-indicator {
+    top: calc(var(--media-top) + var(--media-w) * 0.28);
+  }
+
+  /* phones/tablets: 12.5vw keeps the longest word (WINDMILL) inside the screen */
+  @media (max-width: 900px) {
+    .hero-title {
+      --title-basis: 55vw;
+    }
   }
 }

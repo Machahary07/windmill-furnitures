@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Page not found" };
 /* Same composition as the old SOON placeholder */
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center">
+    <div className="flex min-h-dvh flex-col items-center">
       <Logo className="pt-9" />
 
       <main className="my-auto px-6 text-center">
