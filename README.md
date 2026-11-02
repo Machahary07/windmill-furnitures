@@ -8,6 +8,16 @@ npm run build    # production build (type-checks every <Link href> via typedRout
 npm run media    # regenerate src/lib/media-manifest.json after adding images to public/images
 ```
 
+## Images
+
+`public/images` holds full-quality masters (JPEG q88, 4:4:4 chroma, up to 2400–2560px, made from the
+supplied originals). Pages never send these directly: `next/image` (via `src/components/ui/Photo.tsx`)
+serves each visitor an AVIF/WebP resized to their screen at quality 85 — see `images` in `next.config.ts`.
+The hero carousel uses the same optimized URLs for its CSS backgrounds. Add new images at full quality
+and run `npm run media`.
+
+Fonts are self-hosted variable WOFF2 files in `src/app/fonts` (OFL), loaded with `next/font/local`.
+
 ## Structure
 
 | Path | What lives there |

@@ -20,7 +20,7 @@ export default function CheckoutSummary({ lines, state }: { lines: ResolvedLine[
               <span className="absolute top-0.5 right-0.5 grid size-5 place-items-center rounded-full bg-ink font-jakarta text-[10px] font-bold text-white">{l.qty}</span>
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate font-jakarta text-[13px] font-semibold text-ink">{l.product.name}</p>
+              <p className="line-clamp-2 font-jakarta text-[13px] font-semibold text-ink">{l.product.name}</p>
               <p className="font-jakarta text-[12px] text-gray-nav">
                 {l.woodLabel}
                 {l.upholsteryLabel && ` · ${l.upholsteryLabel}`}

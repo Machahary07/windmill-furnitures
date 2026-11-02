@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { ease, gsap, ScrollTrigger, SplitText, useGSAP } from "@/lib/motion";
 
 /* Scroll-in reveals for anything marked up with:
@@ -8,9 +8,13 @@ import { ease, gsap, ScrollTrigger, SplitText, useGSAP } from "@/lib/motion";
      data-reveal="split"  → characters rise out of a mask (display headings)
    Until this runs, globals.css keeps [data-reveal] at opacity 0 (with a timed
    CSS fallback), so first paint never flashes content that then disappears.
-   Re-runs on every route change; reduced-motion users get static content. */
+   Re-runs on every route change, including query-only ones (catalog filters
+   and sort reorder the grid, which would leave triggers at stale positions).
+   Reads search params, so the layout renders it inside <Suspense>.
+   Reduced-motion users get static content. */
 export default function ScrollReveal() {
   const pathname = usePathname();
+  const query = useSearchParams().toString();
 
   useGSAP(
     () => {
@@ -73,7 +77,7 @@ export default function ScrollReveal() {
 
       return () => mm.revert();
     },
-    { dependencies: [pathname], revertOnUpdate: true },
+    { dependencies: [pathname, query], revertOnUpdate: true },
   );
 
   return null;

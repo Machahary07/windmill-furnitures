@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
@@ -15,7 +16,9 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       </main>
       <Footer />
       <CartDrawer />
-      <ScrollReveal />
+      <Suspense fallback={null}>
+        <ScrollReveal />
+      </Suspense>
     </>
   );
 }

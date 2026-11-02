@@ -29,7 +29,7 @@ export default function TeamSection() {
         <ul className="w-[364px] shrink-0 space-y-[34px] border-r border-[#e6e6e6] pt-[4px] pb-[18px] max-lg:w-full max-lg:border-r-0 max-lg:grid max-lg:grid-cols-3 max-lg:space-y-0 max-lg:gap-6 max-sm:grid-cols-1">
           {leads.map((m, i) => (
             <li key={i} data-reveal className="flex gap-4">
-              <Photo src={m.image} alt="" sizes="157px" className="h-[173px] w-[157px] object-cover" />
+              <Photo src={m.image} alt="" sizes="157px" className="h-[173px] w-[157px] shrink-0 object-cover max-sm:h-[138px] max-sm:w-[125px]" />
               <div>
                 <p className="font-jakarta text-[23px] leading-none font-bold text-ink">{m.name}</p>
                 <p className="mt-1 font-jakarta text-sm text-gray-nav">{m.role}</p>
@@ -39,10 +39,10 @@ export default function TeamSection() {
         </ul>
 
         {/* wider team */}
-        <ul className="grid flex-1 grid-cols-4 gap-y-[52px] pt-[8px] pl-[76px] max-lg:pl-0 max-sm:grid-cols-2">
+        <ul className="grid flex-1 grid-cols-4 gap-y-[52px] pt-[8px] pl-[76px] max-lg:pl-0 max-sm:grid-cols-3 max-sm:gap-x-3 max-sm:gap-y-7">
           {members.map((m, i) => (
             <li key={i} data-reveal>
-              <Photo src={m.image} alt="" sizes="106px" className="h-[121px] w-[106px] object-cover" />
+              <Photo src={m.image} alt="" sizes="(max-width: 640px) 30vw, 106px" className="aspect-[106/121] h-auto w-[106px] object-cover max-sm:w-full" />
               <p className="mt-2.5 font-jakarta text-[11px] leading-tight font-bold text-ink">{m.name}</p>
               <p className="font-jakarta text-[11px] leading-tight text-gray-nav">{m.role}</p>
             </li>

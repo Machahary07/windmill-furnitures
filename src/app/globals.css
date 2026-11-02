@@ -25,9 +25,12 @@ body {
   color: var(--color-ink);
 }
 
-/* sticky 58px navbar: keep #anchors and focused fields clear of it */
+/* sticky 58px navbar: keep #anchors and focused fields clear of it.
+   scrollbar-gutter reserves the scrollbar's space so locking scroll (cart
+   drawer, mobile menu) never makes the page jump sideways. */
 html {
   scroll-padding-top: 72px;
+  scrollbar-gutter: stable;
 }
 
 @keyframes fade {
@@ -125,8 +128,9 @@ html {
   top: calc(var(--media-top) + var(--media-w) * 0.28);
 }
 
+/* phones/tablets: 12.5vw keeps the longest word (WINDMILL) inside the screen */
 @media (max-width: 900px) {
   .hero-title {
-    --title-basis: 77vw;
+    --title-basis: 55vw;
   }
 }

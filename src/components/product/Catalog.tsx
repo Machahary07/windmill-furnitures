@@ -22,7 +22,7 @@ export default function Catalog({ category, type, sort }: { category?: Category;
 
   return (
     <section className={`${shell} pb-[90px]`}>
-      <nav aria-label="Categories" className="flex gap-9 overflow-x-auto border-b border-[#ececec] [scrollbar-width:none] max-md:gap-6">
+      <nav aria-label="Categories" className="flex gap-9 overflow-x-auto border-b border-[#ececec] [scrollbar-width:none] max-md:gap-6 max-[380px]:gap-4">
         <Link href={routes.shop()} aria-current={!category ? "page" : undefined} className={tabClass}>
           All
         </Link>

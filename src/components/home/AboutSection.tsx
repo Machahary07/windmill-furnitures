@@ -48,6 +48,7 @@ export default function AboutSection() {
               alt="The Windmill studio and workshop in Aya Nagar, covered in greenery"
               fill
               sizes="(max-width: 1440px) 93vw, 1337px"
+              quality={85}
               placeholder="blur"
               className="object-cover"
             />

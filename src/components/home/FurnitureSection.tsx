@@ -1,8 +1,14 @@
 import Link from "next/link";
+import Photo from "@/components/ui/Photo";
 import { routes } from "@/lib/routes";
 import { redLink } from "@/components/ui/styles";
 
-const steps = ["Wood Selection", "Carpentry & Joinery", "Grinding & Sanding", "Polishing"];
+const steps = [
+  { title: "Wood Selection", image: "/images/craft/dowels.jpg", alt: "Planed timber showing its grain" },
+  { title: "Carpentry & Joinery", image: "/images/craft/chisel.jpg", alt: "A carpenter paring a joint with a chisel" },
+  { title: "Grinding & Sanding", image: "/images/craft/sawdust.jpg", alt: "Sawdust caught in a beam of light" },
+  { title: "Polishing", image: "/images/craft/armrest.jpg", alt: "The polished curve of a finished armrest" },
+];
 
 const bodyClass = "font-jakarta text-lg leading-[30px] font-normal text-ink max-md:text-base max-md:leading-[26px]";
 
@@ -40,15 +46,16 @@ export default function FurnitureSection() {
         </div>
       </div>
 
-      {/* Process: first step is dark by default; hovering any step moves the highlight */}
-      <ol className="group/steps mt-[63px] grid grid-cols-4 max-md:grid-cols-1">
+      {/* Process: first step is dark (and its photo in colour) by default; hovering
+          or focusing any step moves the highlight. Phones get a swipeable row. */}
+      <ol className="group/steps mt-[63px] grid grid-cols-4 max-md:flex max-md:snap-x max-md:snap-mandatory max-md:overflow-x-auto max-md:[scrollbar-width:none]">
         {steps.map((step, i) => (
           <li
-            key={step}
+            key={step.title}
             data-reveal
             tabIndex={0}
-            className={`flex h-[800px] flex-col justify-between px-12 pt-[38px] pb-[56px] transition-colors duration-300 outline-none max-lg:h-[560px] max-lg:px-6 max-md:h-[260px] max-md:pb-8 ${
-              i > 0 ? "border-l border-ink max-md:border-t max-md:border-l-0" : ""
+            className={`group/step flex h-[800px] flex-col justify-between gap-10 px-12 pt-[38px] pb-[56px] transition-colors duration-300 outline-none max-lg:h-[620px] max-lg:px-6 max-md:h-[500px] max-md:w-[78vw] max-md:shrink-0 max-md:snap-start max-md:gap-6 max-md:px-5 max-md:pb-8 ${
+              i > 0 ? "border-l border-ink" : ""
             } ${
               i === 0
                 ? "bg-[#161c22] text-white group-hover/steps:bg-white group-hover/steps:text-ink hover:bg-[#161c22]! hover:text-white! focus-visible:bg-[#161c22]! focus-visible:text-white!"
@@ -59,7 +66,21 @@ export default function FurnitureSection() {
               <span aria-hidden="true" className="h-px w-[30px] bg-current" />
               <span className="font-jakarta text-[25px] font-medium">{String(i + 1).padStart(2, "0")}</span>
             </div>
-            <h3 className="font-jakarta text-[45px] leading-[1.2] font-medium max-lg:text-[32px]">{step}</h3>
+            <div className="relative min-h-0 flex-1 overflow-hidden">
+              <Photo
+                src={step.image}
+                alt={step.alt}
+                fill
+                sizes="(max-width: 768px) 78vw, 25vw"
+                className={`object-cover transition-[filter,opacity,scale] duration-500 ease-out max-md:opacity-100! max-md:grayscale-0! ${
+                  i === 0
+                    ? "group-hover/steps:opacity-70 group-hover/steps:grayscale group-hover/step:scale-[1.03] group-hover/step:opacity-100! group-hover/step:grayscale-0! group-focus-visible/step:opacity-100! group-focus-visible/step:grayscale-0!"
+                    : "opacity-70 grayscale group-hover/step:scale-[1.03] group-hover/step:opacity-100 group-hover/step:grayscale-0 group-focus-visible/step:opacity-100 group-focus-visible/step:grayscale-0"
+                }`}
+              />
+            </div>
+            {/* always two lines tall so every photo above gets the same height */}
+            <h3 className="flex min-h-[2.4em] items-end font-jakarta text-[45px] leading-[1.2] font-medium max-lg:text-[32px] max-md:text-[28px]">{step.title}</h3>
           </li>
         ))}
       </ol>

@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       {/* 58px nav + 1px border + 3px slack */}
-      <section className="hero-section relative min-h-[calc(100vh-62px)] overflow-hidden">
+      <section className="hero-section relative min-h-[calc(100vh-62px)] overflow-hidden max-[900px]:min-h-0 max-[900px]:pb-6">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-[var(--grid-margin)] bottom-0 z-0 h-[48vh] max-[900px]:inset-x-5 max-[900px]:top-[50vw] max-[900px]:h-auto"

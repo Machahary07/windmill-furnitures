@@ -34,7 +34,7 @@ export default function AuthShell({ title, subtitle, children }: { title: string
 
       {/* Right: artwork panel */}
       <section aria-label="Courtyard architecture photograph" className="relative w-[49.4%] bg-[#f2f1ec] max-[860px]:hidden">
-        <Image src={loginArt} alt="" fill preload sizes="50vw" placeholder="blur" className="object-cover" />
+        <Image src={loginArt} alt="" fill loading="eager" fetchPriority="high" quality={85} sizes="50vw" placeholder="blur" className="object-cover" />
       </section>
     </div>
   );

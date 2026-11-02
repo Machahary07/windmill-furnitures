@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import ProductCard from "@/components/product/ProductCard";
 import { listProducts } from "@/lib/products";
@@ -14,20 +14,35 @@ const catalog = listProducts().filter((p) => !p.drawing);
 
 export default function CatalogCarousel() {
   const track = useRef<HTMLUListElement>(null);
-  const [progress, setProgress] = useState({ start: 0, size: 1 });
+  const thumb = useRef<HTMLSpanElement>(null);
+  const prev = useRef<HTMLButtonElement>(null);
+  const next = useRef<HTMLButtonElement>(null);
 
+  /* write the progress bar and arrow states straight to the DOM, at most once
+     per frame — no React re-render of the cards while the track scrolls */
   useEffect(() => {
     const el = track.current!;
-    const update = () => {
+    let frame = 0;
+    const paint = () => {
+      frame = 0;
       const { scrollLeft, scrollWidth, clientWidth } = el;
-      setProgress({ start: scrollLeft / scrollWidth, size: clientWidth / scrollWidth });
+      const size = clientWidth / scrollWidth;
+      thumb.current!.style.width = `${size * 100}%`;
+      thumb.current!.style.transform = `translateX(${(scrollLeft / clientWidth) * 100}%)`;
+      prev.current!.disabled = scrollLeft <= 1;
+      next.current!.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
     };
-    update();
-    el.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(paint);
+    };
+    paint();
+    el.addEventListener("scroll", schedule, { passive: true });
+    const resize = new ResizeObserver(schedule);
+    resize.observe(el);
     return () => {
-      el.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+      cancelAnimationFrame(frame);
+      el.removeEventListener("scroll", schedule);
+      resize.disconnect();
     };
   }, []);
 
@@ -57,19 +72,17 @@ export default function CatalogCarousel() {
 
       <div className="mt-[30px] flex items-center justify-between px-[3.68%] max-md:px-5">
         <div className="relative h-1 w-[175px] overflow-hidden rounded-full bg-[#eeeeee]" aria-hidden="true">
-          <span
-            className="absolute inset-y-0 rounded-full bg-black transition-[left] duration-150"
-            style={{ left: `${progress.start * 100}%`, width: `${progress.size * 100}%` }}
-          />
+          <span ref={thumb} className="absolute inset-y-0 left-0 rounded-full bg-black will-change-transform" />
         </div>
         <div className="flex gap-4">
           {([-1, 1] as const).map((dir) => (
             <button
               key={dir}
+              ref={dir < 0 ? prev : next}
               type="button"
               onClick={() => scrollBy(dir)}
               aria-label={dir < 0 ? "Previous products" : "Next products"}
-              className="grid size-6 cursor-pointer place-items-center rounded-full border border-[#c00000] text-[#c00000]"
+              className="grid size-6 cursor-pointer place-items-center rounded-full border border-[#c00000] text-[#c00000] transition-opacity disabled:cursor-default disabled:opacity-30"
             >
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d={dir < 0 ? "M6.5 1.5 3 5l3.5 3.5" : "M3.5 1.5 7 5 3.5 8.5"} />
