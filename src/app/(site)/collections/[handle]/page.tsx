@@ -44,7 +44,7 @@ export default async function CollectionPage({ params, searchParams }: PageProps
             <h1 data-reveal="split" className={displayHeading}>
               {category.title.toUpperCase()}.
             </h1>
-            <p data-reveal className={`${body} text-gray-body`}>
+            <p data-reveal="lines" className={`${body} text-gray-body`}>
               {category.blurb}
             </p>
           </div>

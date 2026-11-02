@@ -63,7 +63,7 @@ export default function AboutPage() {
             </h2>
             <p className="mt-3 font-jakarta text-base text-gray-nav">Architect · Urban designer · {founder.role}</p>
           </div>
-          <div data-reveal className={`${body} space-y-6`}>
+          <div data-reveal="lines" className={`${body} space-y-6`}>
             <p>
               Founded in 1991 by one of India&rsquo;s most iconic architects and urban designers, the late Mr. Pradeep Sachdeva, Windmill Furniture has fine-tuned the
               fastidious focus and custom craft that goes behind the business of bespoke furniture.
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <h2 data-reveal="split" className={displayHeading}>
             Made by hand.
           </h2>
-          <p className={body}>
+          <p data-reveal="lines" className={body}>
             Preserving and perfecting age-old carpentry and craft techniques, each piece is designed and handcrafted at our workshop in Aya Nagar. In every join and finish we
             honour the heart and soul of past workmanship — layer upon layer of skilled hands that came before.
           </p>
@@ -127,7 +127,7 @@ export default function AboutPage() {
       {/* woods */}
       <section id="woods" className={`${shell} pb-[100px]`}>
         <h2 className={sectionHeading}>Our woods</h2>
-        <p className={`${body} mt-4 max-w-[760px] text-gray-body`}>Four timbers make up most of our work. Every product page lets you choose between them.</p>
+        <p data-reveal="lines" className={`${body} mt-4 max-w-[760px] text-gray-body`}>Four timbers make up most of our work. Every product page lets you choose between them.</p>
         <ul className="mt-10 grid grid-cols-4 gap-[25px] max-lg:grid-cols-2 max-sm:grid-cols-1">
           {woodTypes.map((w) => (
             <li key={w.id} data-reveal>
@@ -147,7 +147,7 @@ export default function AboutPage() {
           <h2 data-reveal="split" className={displayHeading}>
             Sustainability
           </h2>
-          <div data-reveal className={`${body} space-y-6`}>
+          <div data-reveal="lines" className={`${body} space-y-6`}>
             <p>
               At our workshop in India, we breathe new life into reclaimed wood&mdash;from old homes, railway sleepers, and heritage structures&mdash;while thoughtfully integrating
               carefully selected new timber. This balanced approach transforms both into heirloom-quality furniture through mindful craftsmanship.

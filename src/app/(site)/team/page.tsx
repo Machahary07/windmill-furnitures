@@ -28,7 +28,7 @@ export default function TeamPage() {
               {founder.name}
             </h2>
           </div>
-          <p className={body}>{founder.bio}</p>
+          <p data-reveal="lines" className={body}>{founder.bio}</p>
         </div>
       </section>
 
@@ -72,7 +72,7 @@ export default function TeamPage() {
             <h2 data-reveal="split" className={displayHeading}>
               Work with us.
             </h2>
-            <p className={`${body} mt-6`}>
+            <p data-reveal="lines" className={`${body} mt-6`}>
               We are always glad to hear from carpenters, polishers, upholsterers, designers and architects who care about how things are made.
             </p>
             <Link href={routes.contact("general")} className={`${redLink} mt-8`}>

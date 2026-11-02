@@ -49,7 +49,7 @@ export default function InfoPage({
           </ul>
         </nav>
 
-        <article data-reveal className="max-w-[760px] font-jakarta text-base leading-7 text-gray-body [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-2 [&_h2]:mt-14 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-ink [&_h2:first-child]:mt-0 [&_h3]:mt-8 [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-ink [&_li]:pl-1 [&_p+p]:mt-4 [&_strong]:text-ink [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+        <article data-reveal="lines" className="max-w-[760px] font-jakarta text-base leading-7 text-gray-body [&_a]:text-ink [&_a]:underline [&_a]:underline-offset-2 [&_h2]:mt-14 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-ink [&_h2:first-child]:mt-0 [&_h3]:mt-8 [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-ink [&_li]:pl-1 [&_p+p]:mt-4 [&_strong]:text-ink [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
           {children}
           {updated && <p className="mt-16! border-t border-[#ececec] pt-6 text-[13px] text-gray-nav">Last updated {updated}</p>}
         </article>

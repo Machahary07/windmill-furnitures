@@ -79,7 +79,7 @@ export default async function BespokePage({ searchParams }: PageProps<"/bespoke"
             <h2 data-reveal="split" className={displayHeading}>
               Start an enquiry.
             </h2>
-            <p className={`${body} mt-6`}>Share as much or as little as you have — a sketch, a photo, a size. We reply within two working days.</p>
+            <p data-reveal="lines" className={`${body} mt-6`}>Share as much or as little as you have — a sketch, a photo, a size. We reply within two working days.</p>
             <dl className="mt-10 space-y-6 font-jakarta text-sm leading-6">
               <div>
                 <dt className={eyebrow}>Larger orders</dt>

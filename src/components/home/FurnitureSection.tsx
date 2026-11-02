@@ -19,7 +19,7 @@ export default function FurnitureSection() {
         <h2 data-reveal="split" className="text-center font-jakarta text-[55px] leading-none font-bold tracking-[-0.01em] text-black max-md:text-[38px]">
           OUR FURNITURE
         </h2>
-        <div data-reveal className={`mt-[58px] space-y-6 ${bodyClass}`}>
+        <div data-reveal="lines" className={`mt-[58px] space-y-6 ${bodyClass}`}>
           <p>
             Our furniture is customised to meet the high expectation of our clientele, each piece is
             designed and handcrafted at our workshop in Aya Nagar. Preserving and perfecting age-old

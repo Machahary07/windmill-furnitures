@@ -16,7 +16,7 @@ export default function AboutSection() {
         <h2 data-reveal="split" className={headingClass}>
           ABOUT US.
         </h2>
-        <div data-reveal className={`mt-[42px] space-y-6 ${bodyClass}`}>
+        <div data-reveal="lines" className={`mt-[42px] space-y-6 ${bodyClass}`}>
           <p>
             Founded in 1991 by one of India&rsquo;s most iconic architects and urban designers,
             late Mr. Pradeep Sachdeva, Windmill Furniture, has fine-tuned the fastidious focus and
@@ -71,7 +71,7 @@ export default function AboutSection() {
             aria-hidden="true"
             className="pointer-events-none absolute -top-[108px] right-[4.2%] w-[275px] max-lg:w-[200px] max-md:hidden"
           />
-          <div data-reveal className={`max-w-[860px] space-y-6 ${bodyClass}`}>
+          <div data-reveal="lines" className={`max-w-[860px] space-y-6 ${bodyClass}`}>
             <p>
               At our workshop in India, we breathe new life into reclaimed wood&mdash;from old
               homes, railway sleepers, and heritage structures&mdash;while thoughtfully integrating

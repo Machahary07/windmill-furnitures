@@ -50,7 +50,7 @@ export default function PageHeader({
         {title}
       </h1>
       {intro && (
-        <div data-reveal className={`${body} mt-7 max-w-[760px] text-gray-body`}>
+        <div data-reveal="lines" className={`${body} mt-7 max-w-[760px] text-gray-body`}>
           {intro}
         </div>
       )}

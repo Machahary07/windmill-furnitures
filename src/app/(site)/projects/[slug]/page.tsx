@@ -41,7 +41,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
               {project.title}
             </h1>
           </div>
-          <p className={`${body} text-gray-body`}>{project.summary}</p>
+          <p data-reveal="lines" className={`${body} text-gray-body`}>{project.summary}</p>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
 
       <section className={`${shell} grid grid-cols-[1fr_1.4fr] gap-[8%] py-[90px] max-lg:grid-cols-1 max-lg:gap-6 max-md:py-14`}>
         <h2 className={sectionHeading}>The brief</h2>
-        <div data-reveal className={`${body} space-y-6`}>
+        <div data-reveal="lines" className={`${body} space-y-6`}>
           {project.body.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
