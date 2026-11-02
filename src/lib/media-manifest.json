@@ -1,0 +1,752 @@
+{
+ "/images/about-studio.jpg": {
+  "w": 1200,
+  "h": 797,
+  "c": "#080808"
+ },
+ "/images/catalog/library-easy-chair.jpg": {
+  "w": 804,
+  "h": 914,
+  "c": "#98a8a8"
+ },
+ "/images/catalog/modern-mid-century.jpg": {
+  "w": 804,
+  "h": 914,
+  "c": "#a8a888"
+ },
+ "/images/catalog/theog-chair.jpg": {
+  "w": 804,
+  "h": 914,
+  "c": "#d8d8d8"
+ },
+ "/images/catalog/umtc-lounger.jpg": {
+  "w": 803,
+  "h": 915,
+  "c": "#888888"
+ },
+ "/images/catalog/vintage-mid-century.jpg": {
+  "w": 804,
+  "h": 913,
+  "c": "#d8d8d8"
+ },
+ "/images/collections/beds.jpg": {
+  "w": 2200,
+  "h": 1467,
+  "c": "#785848"
+ },
+ "/images/collections/seating.jpg": {
+  "w": 2200,
+  "h": 1467,
+  "c": "#b8a898"
+ },
+ "/images/collections/storage.jpg": {
+  "w": 1333,
+  "h": 2000,
+  "c": "#080808"
+ },
+ "/images/collections/tables.jpg": {
+  "w": 2200,
+  "h": 1467,
+  "c": "#a89888"
+ },
+ "/images/craft/armrest.jpg": {
+  "w": 1273,
+  "h": 1800,
+  "c": "#080808"
+ },
+ "/images/craft/cafe-bench.jpg": {
+  "w": 1800,
+  "h": 1200,
+  "c": "#a89888"
+ },
+ "/images/craft/cane.jpg": {
+  "w": 1273,
+  "h": 1800,
+  "c": "#080808"
+ },
+ "/images/craft/carving.jpg": {
+  "w": 1800,
+  "h": 1200,
+  "c": "#a8a8a8"
+ },
+ "/images/craft/chisel.jpg": {
+  "w": 1800,
+  "h": 1200,
+  "c": "#583828"
+ },
+ "/images/craft/dowel.jpg": {
+  "w": 1200,
+  "h": 1800,
+  "c": "#483828"
+ },
+ "/images/craft/dowels.jpg": {
+  "w": 1800,
+  "h": 1200,
+  "c": "#483828"
+ },
+ "/images/craft/sawdust.jpg": {
+  "w": 1800,
+  "h": 1200,
+  "c": "#080808"
+ },
+ "/images/craft/studio-steps.jpg": {
+  "w": 755,
+  "h": 1130,
+  "c": "#080808"
+ },
+ "/images/craft/studio.jpg": {
+  "w": 1200,
+  "h": 691,
+  "c": "#080808"
+ },
+ "/images/craft/textile.jpg": {
+  "w": 1800,
+  "h": 1377,
+  "c": "#280808"
+ },
+ "/images/globe.png": {
+  "w": 560,
+  "h": 612,
+  "c": "transparent"
+ },
+ "/images/hero-1.jpg": {
+  "w": 1200,
+  "h": 691,
+  "c": "#080808"
+ },
+ "/images/hero-2.jpg": {
+  "w": 2000,
+  "h": 1334,
+  "c": "#b8a898"
+ },
+ "/images/hero-3.jpg": {
+  "w": 1750,
+  "h": 2000,
+  "c": "#f8e8e8"
+ },
+ "/images/login-art.jpg": {
+  "w": 1750,
+  "h": 2000,
+  "c": "#f8e8e8"
+ },
+ "/images/products/alpana-chair/1.jpg": {
+  "w": 1600,
+  "h": 1278,
+  "c": "#183808"
+ },
+ "/images/products/alpana-chair/2.jpg": {
+  "w": 1600,
+  "h": 1149,
+  "c": "#080808"
+ },
+ "/images/products/alpana-chair/3.jpg": {
+  "w": 1067,
+  "h": 1600,
+  "c": "#e8e8e8"
+ },
+ "/images/products/alpana-chair/4.jpg": {
+  "w": 1600,
+  "h": 1263,
+  "c": "#f8f8f8"
+ },
+ "/images/products/barrel-cane-chair/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#c8d8e8"
+ },
+ "/images/products/barrel-cane-chair/2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#c8d8e8"
+ },
+ "/images/products/barrel-cane-chair/3.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#98a8a8"
+ },
+ "/images/products/barrel-cane-chair/4.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#c8d8e8"
+ },
+ "/images/products/cane-back-bench/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#281818"
+ },
+ "/images/products/cane-back-bench/2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#b8c8c8"
+ },
+ "/images/products/cane-back-bench/3.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#98a8a8"
+ },
+ "/images/products/cane-back-bench/4.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#b8b8a8"
+ },
+ "/images/products/chest-of-drawers/1.jpg": {
+  "w": 1600,
+  "h": 1159,
+  "c": "#f8f8f8"
+ },
+ "/images/products/dresser-with-mirror/1.jpg": {
+  "w": 1171,
+  "h": 1600,
+  "c": "#f8f8f8"
+ },
+ "/images/products/half-cane-settee/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#e8e8e8"
+ },
+ "/images/products/half-cane-settee/2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/half-cane-settee/3.jpg": {
+  "w": 1600,
+  "h": 1200,
+  "c": "#382828"
+ },
+ "/images/products/hall-console/1.jpg": {
+  "w": 1600,
+  "h": 1123,
+  "c": "#f8f8c8"
+ },
+ "/images/products/japhu-chair/1.jpg": {
+  "w": 1061,
+  "h": 1591,
+  "c": "#e8e8f8"
+ },
+ "/images/products/king-bed/1.jpg": {
+  "w": 1600,
+  "h": 1143,
+  "c": "#f8f8f8"
+ },
+ "/images/products/kohima-sofa/1.jpg": {
+  "w": 1600,
+  "h": 991,
+  "c": "#f8f8f8"
+ },
+ "/images/products/kohima-sofa/2.jpg": {
+  "w": 655,
+  "h": 647,
+  "c": "#f8f8f8"
+ },
+ "/images/products/lamp-side-table/1.jpg": {
+  "w": 1024,
+  "h": 742,
+  "c": "#e8e8f8"
+ },
+ "/images/products/lattice-bookshelf/1.jpg": {
+  "w": 1024,
+  "h": 647,
+  "c": "#e8e8f8"
+ },
+ "/images/products/lattice-day-bed/1.jpg": {
+  "w": 1024,
+  "h": 712,
+  "c": "#e8e8f8"
+ },
+ "/images/products/lattice-day-bed/2.jpg": {
+  "w": 1024,
+  "h": 571,
+  "c": "#f8f8f8"
+ },
+ "/images/products/library-easy-chair-cutout.png": {
+  "w": 597,
+  "h": 701,
+  "c": "transparent"
+ },
+ "/images/products/library-easy-chair-hero.jpg": {
+  "w": 1440,
+  "h": 1202,
+  "c": "#98a8a8"
+ },
+ "/images/products/library-easy-chair/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#281818"
+ },
+ "/images/products/library-easy-chair/2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#c8d8d8"
+ },
+ "/images/products/library-easy-chair/3.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#98a8a8"
+ },
+ "/images/products/library-easy-chair/4.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#98a8a8"
+ },
+ "/images/products/library-easy-chair/5.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8e8f8"
+ },
+ "/images/products/library-easy-chair/6.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8e8f8"
+ },
+ "/images/products/long-bedside-table/1.jpg": {
+  "w": 1024,
+  "h": 742,
+  "c": "#f8f8f8"
+ },
+ "/images/products/louvred-side-unit/1.jpg": {
+  "w": 1600,
+  "h": 1109,
+  "c": "#f8f8f8"
+ },
+ "/images/products/low-seat-ottoman/1.jpg": {
+  "w": 1600,
+  "h": 1127,
+  "c": "#f8f8f8"
+ },
+ "/images/products/media-unit/1.jpg": {
+  "w": 1024,
+  "h": 742,
+  "c": "#f8f8f8"
+ },
+ "/images/products/modern-mid-century-lounger/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8e8f8"
+ },
+ "/images/products/modern-mid-century-lounger/2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#888888"
+ },
+ "/images/products/modern-mid-century-wide.jpg": {
+  "w": 700,
+  "h": 481,
+  "c": "#c8c8c8"
+ },
+ "/images/products/nest-of-tables/1.jpg": {
+  "w": 1024,
+  "h": 742,
+  "c": "#f8f8f8"
+ },
+ "/images/products/panelled-wardrobe/1.jpg": {
+  "w": 1600,
+  "h": 1123,
+  "c": "#f8f8f8"
+ },
+ "/images/products/queen-bed/1.jpg": {
+  "w": 1024,
+  "h": 723,
+  "c": "#f8f8f8"
+ },
+ "/images/products/rocking-chair/1.jpg": {
+  "w": 1600,
+  "h": 1134,
+  "c": "#f8f8f8"
+ },
+ "/images/products/samode-chair/1.jpg": {
+  "w": 728,
+  "h": 1024,
+  "c": "#f8f8f8"
+ },
+ "/images/products/shanghai-centre-table/1.jpg": {
+  "w": 1024,
+  "h": 724,
+  "c": "#f8f8f8"
+ },
+ "/images/products/silverglades-chaise-lounge/1.jpg": {
+  "w": 1600,
+  "h": 1095,
+  "c": "#f8f8f8"
+ },
+ "/images/products/six-seater-dining-table/1.jpg": {
+  "w": 1024,
+  "h": 742,
+  "c": "#f8f8f8"
+ },
+ "/images/products/slatted-easy-chair/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#98a8a8"
+ },
+ "/images/products/storage-single-bed/1.jpg": {
+  "w": 1600,
+  "h": 1146,
+  "c": "#f8f8f8"
+ },
+ "/images/products/study-armchair/1.jpg": {
+  "w": 1112,
+  "h": 1576,
+  "c": "#e8e8f8"
+ },
+ "/images/products/theog-chair-wide.jpg": {
+  "w": 700,
+  "h": 481,
+  "c": "#d8d8d8"
+ },
+ "/images/products/theog-chair/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/theog-chair/2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/theog-chair/3.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/twisted-chair/1.jpg": {
+  "w": 1600,
+  "h": 1067,
+  "c": "#c8c8b8"
+ },
+ "/images/products/twisted-chair/2.jpg": {
+  "w": 1600,
+  "h": 1227,
+  "c": "#f8f8f8"
+ },
+ "/images/products/twisted-chair/3.jpg": {
+  "w": 1600,
+  "h": 1067,
+  "c": "#e8e8d8"
+ },
+ "/images/products/twisted-chair/4.jpg": {
+  "w": 1600,
+  "h": 664,
+  "c": "#183808"
+ },
+ "/images/products/umtc-lounger-wide.jpg": {
+  "w": 700,
+  "h": 481,
+  "c": "#d8d8d8"
+ },
+ "/images/products/umtc-lounger/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/umtc-lounger/2.jpg": {
+  "w": 1600,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/umtc-lounger/3.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/umtc-lounger/4.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/vintage-mid-century-lounger/1.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/vintage-mid-century-lounger/2.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/vintage-mid-century-lounger/3.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "c": "#d8d8d8"
+ },
+ "/images/products/vintage-mid-century-wide.jpg": {
+  "w": 700,
+  "h": 481,
+  "c": "#d8d8d8"
+ },
+ "/images/products/windmill-dining-chair/1.jpg": {
+  "w": 1069,
+  "h": 1600,
+  "c": "#e8e8f8"
+ },
+ "/images/products/windward-lounge-sofa/1.jpg": {
+  "w": 1024,
+  "h": 742,
+  "c": "#f8f8f8"
+ },
+ "/images/products/writing-desk/1.jpg": {
+  "w": 1024,
+  "h": 742,
+  "c": "#f8f8f8"
+ },
+ "/images/projects/garden-house/1.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#e8e8d8"
+ },
+ "/images/projects/garden-house/2.jpg": {
+  "w": 1600,
+  "h": 1064,
+  "c": "#d8d8d8"
+ },
+ "/images/projects/garden-house/3.jpg": {
+  "w": 1200,
+  "h": 797,
+  "c": "#080808"
+ },
+ "/images/projects/garden-house/4.jpg": {
+  "w": 2000,
+  "h": 1437,
+  "c": "#080808"
+ },
+ "/images/projects/garden-studio-offices/1.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#988888"
+ },
+ "/images/projects/garden-studio-offices/2.jpg": {
+  "w": 1759,
+  "h": 2000,
+  "c": "#b84808"
+ },
+ "/images/projects/garden-studio-offices/3.jpg": {
+  "w": 1979,
+  "h": 2000,
+  "c": "#98a8a8"
+ },
+ "/images/projects/garden-studio-offices/4.jpg": {
+  "w": 2000,
+  "h": 1319,
+  "c": "#a8b8a8"
+ },
+ "/images/projects/garden-studio-offices/5.jpg": {
+  "w": 2000,
+  "h": 1415,
+  "c": "#f8f8f8"
+ },
+ "/images/projects/garden-studio-offices/6.jpg": {
+  "w": 2000,
+  "h": 1462,
+  "c": "#f8f8f8"
+ },
+ "/images/projects/heritage-suites/1.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#b8a898"
+ },
+ "/images/projects/heritage-suites/2.jpg": {
+  "w": 1333,
+  "h": 2000,
+  "c": "#887868"
+ },
+ "/images/projects/heritage-suites/3.jpg": {
+  "w": 1333,
+  "h": 2000,
+  "c": "#887868"
+ },
+ "/images/projects/heritage-suites/4.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#b8a898"
+ },
+ "/images/projects/heritage-suites/5.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#a89888"
+ },
+ "/images/projects/heritage-suites/6.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#887868"
+ },
+ "/images/projects/library-house/1.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#786858"
+ },
+ "/images/projects/library-house/2.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#080808"
+ },
+ "/images/projects/library-house/3.jpg": {
+  "w": 1333,
+  "h": 2000,
+  "c": "#080808"
+ },
+ "/images/projects/library-house/4.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#080808"
+ },
+ "/images/projects/library-house/5.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#c8c8c8"
+ },
+ "/images/projects/library-house/6.jpg": {
+  "w": 1333,
+  "h": 2000,
+  "c": "#786858"
+ },
+ "/images/projects/stairwell-residence/1.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#b8a898"
+ },
+ "/images/projects/stairwell-residence/2.jpg": {
+  "w": 1333,
+  "h": 2000,
+  "c": "#180808"
+ },
+ "/images/projects/stairwell-residence/3.jpg": {
+  "w": 2000,
+  "h": 1117,
+  "c": "#a8a8a8"
+ },
+ "/images/projects/stairwell-residence/4.jpg": {
+  "w": 1333,
+  "h": 2000,
+  "c": "#c8b8b8"
+ },
+ "/images/projects/the-dining-hall/1.jpg": {
+  "w": 2000,
+  "h": 1396,
+  "c": "#f8f8f8"
+ },
+ "/images/projects/the-dining-hall/2.jpg": {
+  "w": 2000,
+  "h": 1333,
+  "c": "#a89888"
+ },
+ "/images/projects/the-dining-hall/3.jpg": {
+  "w": 1280,
+  "h": 723,
+  "c": "#a89888"
+ },
+ "/images/projects/the-dining-hall/4.jpg": {
+  "w": 1280,
+  "h": 723,
+  "c": "#482808"
+ },
+ "/images/sketches/bookshelf-view.jpg": {
+  "w": 1400,
+  "h": 1019,
+  "c": "#b8b8b8"
+ },
+ "/images/sketches/centre-table.jpg": {
+  "w": 1400,
+  "h": 983,
+  "c": "#f8f8f8"
+ },
+ "/images/sketches/day-bed.jpg": {
+  "w": 1024,
+  "h": 712,
+  "c": "#e8e8f8"
+ },
+ "/images/sketches/dining-chair.jpg": {
+  "w": 935,
+  "h": 1400,
+  "c": "#e8e8f8"
+ },
+ "/images/sketches/guest-room.jpg": {
+  "w": 974,
+  "h": 703,
+  "c": "#f8f8f8"
+ },
+ "/images/sketches/king-bed.jpg": {
+  "w": 1400,
+  "h": 979,
+  "c": "#e8d8b8"
+ },
+ "/images/sketches/kohima-sofa.jpg": {
+  "w": 1400,
+  "h": 867,
+  "c": "#f8f8f8"
+ },
+ "/images/sketches/rocking-chair.jpg": {
+  "w": 1400,
+  "h": 992,
+  "c": "#f8f8f8"
+ },
+ "/images/sketches/wardrobe.jpg": {
+  "w": 1400,
+  "h": 983,
+  "c": "#f8f8f8"
+ },
+ "/images/sketches/workstation.jpg": {
+  "w": 1400,
+  "h": 921,
+  "c": "#f8f8f8"
+ },
+ "/images/swatches/steam-beech.jpg": {
+  "w": 200,
+  "h": 199,
+  "c": "#a88868"
+ },
+ "/images/swatches/sw1.jpg": {
+  "w": 150,
+  "h": 150,
+  "c": "#183848"
+ },
+ "/images/swatches/sw2.jpg": {
+  "w": 150,
+  "h": 150,
+  "c": "#282838"
+ },
+ "/images/swatches/sw3.jpg": {
+  "w": 150,
+  "h": 149,
+  "c": "#284848"
+ },
+ "/images/swatches/sw4.jpg": {
+  "w": 150,
+  "h": 150,
+  "c": "#285868"
+ },
+ "/images/swatches/sw5.jpg": {
+  "w": 150,
+  "h": 150,
+  "c": "#683828"
+ },
+ "/images/swatches/sw6.jpg": {
+  "w": 150,
+  "h": 151,
+  "c": "#581828"
+ },
+ "/images/swatches/sw7.jpg": {
+  "w": 150,
+  "h": 150,
+  "c": "#281818"
+ },
+ "/images/swatches/teak.jpg": {
+  "w": 200,
+  "h": 201,
+  "c": "#a86838"
+ },
+ "/images/swatches/walnut.jpg": {
+  "w": 200,
+  "h": 201,
+  "c": "#583828"
+ },
+ "/images/swatches/white-ash.jpg": {
+  "w": 200,
+  "h": 202,
+  "c": "#e8d8b8"
+ },
+ "/images/team-placeholder.jpg": {
+  "w": 612,
+  "h": 612,
+  "c": "#e8e8e8"
+ }
+}

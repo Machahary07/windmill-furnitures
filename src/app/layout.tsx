@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Open_Sans, Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const openSans = Open_Sans({
@@ -21,12 +22,16 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: "Windmill",
+    default: "Windmill — Bespoke handcrafted furniture",
     template: "Windmill — %s",
   },
-  description: "Windmill Furnitures — crafted, bespoke interiors.",
+  description: site.description,
+  openGraph: { siteName: site.legalName, type: "website", locale: "en_IN", images: ["/images/hero-1.jpg"] },
 };
+
+export const viewport: Viewport = { themeColor: "#ffffff" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -34,6 +39,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${openSans.variable} ${plusJakarta.variable} ${outfit.variable} h-full antialiased`}
     >
+      <head>
+        <noscript>
+          <style>{"[data-reveal]{opacity:1!important;animation:none!important}"}</style>
+        </noscript>
+      </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );

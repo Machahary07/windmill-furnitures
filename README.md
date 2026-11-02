@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Windmill Furnitures
 
-## Getting Started
-
-First, run the development server:
+Storefront for Windmill Furniture — Next.js 16 (App Router, Turbopack), Tailwind 4, GSAP.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # http://localhost:3000
+npm run build    # production build (type-checks every <Link href> via typedRoutes)
+npm run media    # regenerate src/lib/media-manifest.json after adding images to public/images
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | What lives there |
+| --- | --- |
+| `src/app/(site)` | Pages with the navbar, footer and cart drawer |
+| `src/app/(auth)` | `/login`, `/register`, `/forgot-password` (split artwork layout) |
+| `src/app/(checkout)` | `/checkout` → `/checkout/payment` → `/checkout/success/[id]` (or `/checkout/failed`) |
+| `src/app/(print)` | Printable GST invoice |
+| `src/app/p/[code]` | Short product links: `/p/WM-SE-01` → `/products/library-easy-chair` |
+| `src/lib/routes.ts` | **Every URL on the site.** Build links with `routes.*`, never by hand |
+| `src/lib/products.ts` | Catalog data and queries (pages only use the query functions) |
+| `src/lib/projects.ts`, `team.ts`, `site.ts` | Projects, team, contact details and delivery/GST settings |
+| `src/lib/store/*` | Cart, wishlist, account, orders (browser storage — see below) |
+| `src/components/ui/styles.ts` | Shared class recipes (headings, buttons, inputs) from the original designs |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Links
 
-## Learn More
+- Products: `/products/{slug}` — permanent and unique. Options are part of the link:
+  `/products/theog-chair?wood=walnut&upholstery=sw3` opens that configuration ("Copy link to this configuration").
+- Filters are links too: `/collections/seating?type=sofas&sort=price-asc`.
+- Old v1 URLs (`/product/...`, `/soon`) redirect (see `next.config.ts`).
 
-To learn more about Next.js, take a look at the following resources:
+## Demo layer — what the backend replaces
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+There is no backend yet. These are deliberately isolated so Payload CMS + Razorpay can drop in:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/lib/store/account.ts` — sign-in, addresses and orders are stored in the browser (`TODO(backend)`).
+- `src/lib/payments.ts` — `startPayment` simulates Razorpay; the steps to replace it are in the file.
+- `src/app/actions.ts` — contact, bespoke and newsletter forms validate but don’t send yet.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Search the code for `TODO(client)` for content to confirm (prices, dimensions, contact details,
+project write-ups, team, policies) and `TODO(backend)` for integration points.

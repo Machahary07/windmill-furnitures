@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import { routes } from "@/lib/routes";
+import { redLink } from "@/components/ui/styles";
 import aboutStudio from "../../../public/images/about-studio.jpg";
 import globe from "../../../public/images/globe.png";
 
@@ -10,8 +13,10 @@ export default function AboutSection() {
   return (
     <>
       <section id="about" className="mx-auto max-w-[1440px] px-[18.3%] pt-[84px] pb-[66px] max-lg:px-8 max-md:px-5 max-md:pt-14">
-        <h2 className={headingClass}>ABOUT US.</h2>
-        <div className={`mt-[42px] space-y-6 ${bodyClass}`}>
+        <h2 data-reveal="split" className={headingClass}>
+          ABOUT US.
+        </h2>
+        <div data-reveal className={`mt-[42px] space-y-6 ${bodyClass}`}>
           <p>
             Founded in 1991 by one of India&rsquo;s most iconic architects and urban designers,
             late Mr. Pradeep Sachdeva, Windmill Furniture, has fine-tuned the fastidious focus and
@@ -29,12 +34,15 @@ export default function AboutSection() {
             hub for new ideas at Windmill Furniture.
           </p>
         </div>
+        <Link href={routes.about} className={`${redLink} mt-10`}>
+          Our story
+        </Link>
       </section>
 
       {/* tint band starts ~46% down the photo and runs behind the Sustainability heading */}
       <div className="bg-[linear-gradient(to_bottom,transparent_46%,#f3f7f4_46%)]">
         <div className="mx-auto max-w-[1440px] px-[3.54%] max-md:px-5">
-          <div className="relative aspect-[1337/564] w-full overflow-hidden max-md:aspect-[4/3]">
+          <div data-reveal className="relative aspect-[1337/564] w-full overflow-hidden max-md:aspect-[4/3]">
             <Image
               src={aboutStudio}
               alt="The Windmill studio and workshop in Aya Nagar, covered in greenery"
@@ -50,7 +58,9 @@ export default function AboutSection() {
       <section id="sustainability" className="relative overflow-hidden">
         <div className="bg-[#f3f7f4]">
           <div className="mx-auto max-w-[1440px] px-[3.54%] pt-[66px] pb-[32px] max-md:px-5 max-md:pt-10">
-            <h2 className={headingClass}>Sustainability</h2>
+            <h2 data-reveal="split" className={headingClass}>
+              Sustainability
+            </h2>
           </div>
         </div>
         <div className="relative mx-auto max-w-[1440px] px-[3.54%] pt-[32px] pb-[120px] max-md:px-5 max-md:pb-16">
@@ -60,7 +70,7 @@ export default function AboutSection() {
             aria-hidden="true"
             className="pointer-events-none absolute -top-[108px] right-[4.2%] w-[275px] max-lg:w-[200px] max-md:hidden"
           />
-          <div className={`max-w-[860px] space-y-6 ${bodyClass}`}>
+          <div data-reveal className={`max-w-[860px] space-y-6 ${bodyClass}`}>
             <p>
               At our workshop in India, we breathe new life into reclaimed wood&mdash;from old
               homes, railway sleepers, and heritage structures&mdash;while thoughtfully integrating

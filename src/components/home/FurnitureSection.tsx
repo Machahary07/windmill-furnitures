@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { routes } from "@/lib/routes";
+import { redLink } from "@/components/ui/styles";
+
 const steps = ["Wood Selection", "Carpentry & Joinery", "Grinding & Sanding", "Polishing"];
 
 const bodyClass = "font-jakarta text-lg leading-[30px] font-normal text-ink max-md:text-base max-md:leading-[26px]";
@@ -6,10 +10,10 @@ export default function FurnitureSection() {
   return (
     <section id="furniture">
       <div className="mx-auto max-w-[1440px] px-[2.5%] max-md:px-5">
-        <h2 className="text-center font-jakarta text-[55px] leading-none font-bold tracking-[-0.01em] text-black max-md:text-[38px]">
+        <h2 data-reveal="split" className="text-center font-jakarta text-[55px] leading-none font-bold tracking-[-0.01em] text-black max-md:text-[38px]">
           OUR FURNITURE
         </h2>
-        <div className={`mt-[58px] space-y-6 ${bodyClass}`}>
+        <div data-reveal className={`mt-[58px] space-y-6 ${bodyClass}`}>
           <p>
             Our furniture is customised to meet the high expectation of our clientele, each piece is
             designed and handcrafted at our workshop in Aya Nagar. Preserving and perfecting age-old
@@ -26,6 +30,14 @@ export default function FurnitureSection() {
             continuation of India&rsquo;s craft legacy, carried forward with respect and quiet pride.
           </p>
         </div>
+        <div className="mt-10 flex flex-wrap gap-10">
+          <Link href={routes.bespoke()} className={redLink}>
+            Commission a piece
+          </Link>
+          <Link href={routes.projects} className={redLink}>
+            See our projects
+          </Link>
+        </div>
       </div>
 
       {/* Process: first step is dark by default; hovering any step moves the highlight */}
@@ -33,6 +45,7 @@ export default function FurnitureSection() {
         {steps.map((step, i) => (
           <li
             key={step}
+            data-reveal
             tabIndex={0}
             className={`flex h-[800px] flex-col justify-between px-12 pt-[38px] pb-[56px] transition-colors duration-300 outline-none max-lg:h-[560px] max-lg:px-6 max-md:h-[260px] max-md:pb-8 ${
               i > 0 ? "border-l border-ink max-md:border-t max-md:border-l-0" : ""

@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { products } from "@/lib/products";
+import ProductCard from "@/components/product/ProductCard";
+import { listProducts } from "@/lib/products";
+import { routes } from "@/lib/routes";
+import { redLink } from "@/components/ui/styles";
 
 const CARD_STEP = 293; // 268px card + 25px gap
+
+/* photographed pieces only; drawings live in the full shop */
+const catalog = listProducts().filter((p) => !p.drawing);
 
 export default function CatalogCarousel() {
   const track = useRef<HTMLUListElement>(null);
@@ -30,39 +35,22 @@ export default function CatalogCarousel() {
 
   return (
     <section id="catalog" className="mx-auto max-w-[1440px] pt-[42px] pb-[80px]">
-      <h2 className="px-[3.96%] font-jakarta text-[52px] leading-none font-light text-black max-md:px-5 max-md:text-[38px]">
-        CATALOG
-      </h2>
+      <div className="flex items-end justify-between gap-6 px-[3.96%] max-md:px-5">
+        <h2 data-reveal="split" className="font-jakarta text-[52px] leading-none font-light text-black max-md:text-[38px]">
+          CATALOG
+        </h2>
+        <Link href={routes.shop()} className={redLink}>
+          View all furniture
+        </Link>
+      </div>
 
       <ul
         ref={track}
         className="mt-[60px] flex snap-x snap-mandatory gap-[25px] overflow-x-auto scroll-smooth px-[3.4%] scroll-px-[3.4%] max-md:scroll-px-5 [scrollbar-width:none] max-md:px-5 [&::-webkit-scrollbar]:hidden"
       >
-        {products.map((p) => (
-          <li key={p.slug} className="relative w-[268px] shrink-0 snap-start overflow-hidden rounded-xl bg-[#efefef]">
-            <Link href={`/product/${p.slug}`} className="relative block h-[305px]">
-              <Image src={p.card} alt={p.name} fill sizes="268px" placeholder="blur" className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
-            </Link>
-            <div className="flex items-center justify-between gap-3 px-[15px] pt-[17px] pb-[19px]">
-              <div className="min-w-0">
-                <p className="truncate font-jakarta text-sm font-medium tracking-[0.06em] text-ink uppercase" title={p.name}>
-                  {p.name}
-                </p>
-                <p className="mt-1 font-jakarta text-sm font-bold text-ink">${p.price}</p>
-              </div>
-              <Link
-                href={`/product/${p.slug}`}
-                aria-label={`Choose options and add ${p.name} to cart`}
-                className="grid size-9 shrink-0 place-items-center rounded-full bg-[#c00000] text-white"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.2" />
-                  <path d="M11 10.5h5" />
-                  <circle cx="9.5" cy="19" r="1.3" />
-                  <circle cx="16.5" cy="19" r="1.3" />
-                </svg>
-              </Link>
-            </div>
+        {catalog.map((p) => (
+          <li key={p.slug} data-reveal className="w-[268px] shrink-0 snap-start">
+            <ProductCard product={p} />
           </li>
         ))}
       </ul>
