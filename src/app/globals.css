@@ -14,7 +14,8 @@
   --color-border: #e3e3e3;
 
   --font-sans: var(--font-open-sans), "Helvetica Neue", Arial, sans-serif;
-  --font-jakarta: var(--font-plus-jakarta), var(--font-open-sans), sans-serif;
+  /* ext first: its unicode-range limits it to glyphs (₹) the latin file lacks */
+  --font-jakarta: var(--font-plus-jakarta-ext), var(--font-plus-jakarta), var(--font-open-sans), sans-serif;
   --font-outfit: var(--font-outfit-display), var(--font-open-sans), sans-serif;
 }
 

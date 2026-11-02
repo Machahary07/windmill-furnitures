@@ -1,24 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Open_Sans, Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const openSans = Open_Sans({
+/* Self-hosted variable fonts (OFL, from Fontsource) in ./fonts. Loading them
+   locally keeps the build off the network — next/font/google failed on Vercel
+   when Google served font URLs with query strings. */
+const openSans = localFont({
   variable: "--font-open-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  src: "./fonts/open-sans-latin-wght-normal.woff2",
+  weight: "300 800",
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const plusJakarta = localFont({
   variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  src: "./fonts/plus-jakarta-sans-latin-wght-normal.woff2",
+  weight: "200 800",
 });
 
-const outfit = Outfit({
+/* only the extended-Latin glyphs prices need (₹ lives here); scoped by
+   unicode-range so it downloads only when such a character is on the page */
+const plusJakartaExt = localFont({
+  variable: "--font-plus-jakarta-ext",
+  src: "./fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2",
+  weight: "200 800",
+  adjustFontFallback: false,
+  declarations: [{ prop: "unicode-range", value: "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1EFF, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF" }],
+});
+
+const outfit = localFont({
   variable: "--font-outfit-display",
-  subsets: ["latin"],
-  weight: ["700"],
+  src: "./fonts/outfit-latin-wght-normal.woff2",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +50,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${openSans.variable} ${plusJakarta.variable} ${outfit.variable} h-full antialiased`}
+      className={`${openSans.variable} ${plusJakarta.variable} ${plusJakartaExt.variable} ${outfit.variable} h-full antialiased`}
     >
       <head>
         <noscript>
